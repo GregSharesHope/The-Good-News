@@ -1,36 +1,368 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Hope & Questions</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Hope & Questions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --bg: #f5f5f7;
+            --card: #ffffff;
+            --text: #1d1d1f;
+            --secondary: #6e6e73;
+            --accent: #0071e3;
+            --border: #e5e5e7;
+            --quote-bg: #fafafa;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 48px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--secondary);
+            margin-top: 0;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        details {
+            margin-top: 2rem;
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+        }
+
+        summary {
+            font-size: 1.35rem;
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            padding: 0.25rem 0;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "▼";
+            float: right;
+            color: var(--secondary);
+            font-size: 0.9rem;
+            transition: transform 0.2s ease;
+        }
+
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        .scripture {
+            font-weight: 600;
+            color: var(--text);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        blockquote {
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            border-left: 4px solid var(--accent);
+            background: var(--quote-bg);
+            color: var(--secondary);
+            font-style: italic;
+        }
+
+        ul {
+            padding-left: 1.25rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+        }
+
+        .cta {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 12px 20px;
+            background: var(--accent);
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .cta:hover {
+            text-decoration: none;
+            opacity: 0.92;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 24px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
-<body style="font-family: Arial; max-width: 700px; margin: auto; padding: 20px;">
 
-<h1>Hi, I'm Greg</h1>
+<body>
 
-<p>If we just met and talked about faith, I’m really glad you’re here.</p>
+<div class="container">
 
-<h2>The Good News</h2>
+    <h1>Hi, I'm Greg</h1>
 
-<p>God created us for relationship with Him. We have all sinned and fallen short. ... need to work on this content...</p>
+    <p>
+        Chances are, you and I have had a conversation about God, and I'm really glad you're here.
+        This website is a compilation of links to videos and resources which I pray God will use in your life.
+    </p>
 
-<h2>Start Here (Short Videos That Explain the Good News About Jesus)</h2>
+    <p>
+        My prayer for you is that you would come to know God. He is the one who created you
+        and is the very reason you (and everything else) exist.
+        Incredibly, He has made a way for you to know Him.
+    </p>
 
-<p>
-<a href="https://youtu.be/zRXxSfc3neM?si=7WoYyjuROT8WhwzD">What is the Gospel?</a><br>
-<a href="https://www.twowaystolive.com/">Two Ways To Live</a>
-</p>
+    <details open>
+        <summary>The Good News</summary>
 
-<h2>Churches in Louisville!</h2>
+        <blockquote>
+            “For all have sinned and fall short of the glory of God.” – Romans 3:23
+        </blockquote>
 
-<p>
-Church 1<br>
-Church 2
-</p>
+        <p>
+            The Bible is very clear on this point. We are all sinners.
+            That means we have broken God's perfect law and are by nature in rebellion against Him.
+        </p>
 
-<h2>Questions?</h2>
+        <blockquote>
+            “For the wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord.” – Romans 6:23
+        </blockquote>
 
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSeZyMCVmjn0XFvFdY2HTlk9HAnBR5SGKKQJg3PnJdEZ4ev_2w/viewform?usp=header">Click Here to Reach Me with a Question</a>
-  
+        <p>
+            Because of our sin, we are guilty before God and deserve His judgment.
+            The Bible uses the term "wages" to describe something that we have earned by our sin.
+            We have earned death as the just consequence for our sin.
+        </p>
+
+        <blockquote>
+            “But God shows His love for us in that while we were still sinners, Christ died for us.” – Romans 5:8
+        </blockquote>
+
+        <p>
+            There it is, the greatest news you will ever hear.
+            God loves us and has proven it in the greatest act of love the world has ever seen.
+            Even when we were still His enemies, Jesus died in our place.
+        </p>
+
+        <p>
+            And his death was not just a tragic accident or unexpected mistake.  
+            This was God's plan to save us from the beginning.  
+            In fact, the Bible contains descriptions of this plan centuries before it took place.  
+            One of the clearest pictures is from the prophet Isaiah, 
+            who's words were written down 700 years before Jesus's death on the cross.  
+            Look at how remarkably Isaiah's words point to what Jesus would accomplish for us on the cross:
+        </p>
+
+        <blockquote>
+            Surely he has borne our griefs and carried our sorrows;<br>
+            yet we esteemed him stricken, smitten by God, and afflicted.<br>
+
+            But he was pierced for our transgressions;<br>
+            he was crushed for our iniquities [sins];<br>
+            upon him was the chastisement that brought us peace,<br>
+            and with his wounds we are healed.<br>
+
+            All we like sheep have gone astray;<br>
+            we have turned—every one—to his own way;<br>
+            and the LORD has laid on him the iniquity [sin] of us all.<br>
+
+            – Isaiah 53:4-6
+        </blockquote>
+
+        <p>
+            In His death on the cross, Jesus took the wages that we had earned through our sin,
+            and He bore them Himself.
+        </p>
+
+        <p>
+            So how do we respond?
+        </p>
+
+        <blockquote>
+            “If you declare with your mouth, ‘Jesus is Lord,’ and believe in your heart that God raised Him from the dead, you will be saved.” – Romans 10:9
+        </blockquote>
+
+        <blockquote>
+            “For everyone who calls on the name of the Lord will be saved.” – Romans 10:13
+        </blockquote>
+
+        <blockquote>
+            “If we confess our sins, he is faithful and just to forgive us our sins and to cleanse us from all unrighteousness.” – 1 John 1:9
+        </blockquote>
+
+        <p>
+            Call out to Jesus. Humbly confess your sin.
+            Believe in Him and that His sacrifice on the cross was for you.
+            Trust in His promise to save.
+        </p>
+
+        <blockquote>
+            “Therefore, since we have been justified by faith, we have peace with God through our Lord Jesus Christ.” – Romans 5:1
+        </blockquote>
+
+        <blockquote>
+            “There is therefore now no condemnation for those who are in Christ Jesus.” – Romans 8:1
+        </blockquote>
+
+        <p>
+            These verses are full of incredible promises for those who are trusting in Jesus.
+            Think about how amazing this is: there is no condemnation, and we  have peace with God.
+        </p>
+
+        <p>
+            One of the ways the Bible describes the Christian life is as a race.
+            We know our destination, but we haven't arrived there yet.
+            If you are just starting out as a new believer in Jesus,
+            two of the most important things you can do are get plugged into a local church
+            and begin reading the Bible.
+            The following links are intended to help you do just that.
+        </p>
+
+    </details>
+
+    <details>
+        <summary>Resources for Getting in to God's Word</summary>
+
+        <p>
+            God speaks to us through His word.  If you're new to reading the Bible, I recommend starting with one of the biographies of Jesus.
+            The Gospel of John is a great place to start.  John was one of Jesus' disciples -- an eye witness to His life and ministry.
+            <br>You can read his account here:
+        </p>
+
+        <ul>
+            <li><a href="https://www.esv.org/John+1/" target="_blank" rel="noopener noreferrer">The Gospel of John (ESV.org)</a></li>
+        </ul>
+    </details>
+
+    <details>
+        <summary>Resources for Finding a Local Church</summary>
+
+        <p>
+            These church-finding tools may help you find a faithful local church:
+        </p>
+
+        <ul>
+            <li><a href="https://www.sovereigngrace.com/churches" target="_blank" rel="noopener noreferrer">Sovereign Grace Churches</a></li>
+            <li><a href="https://www.9marks.org/church-search/" target="_blank" rel="noopener noreferrer">9Marks Church Search</a></li>
+            <li><a href="https://www.thegospelcoalition.org/churches/" target="_blank" rel="noopener noreferrer">The Gospel Coalition Church Directory</a></li>
+            <li><a href="https://www.acts29.com/find-a-church/" target="_blank" rel="noopener noreferrer">Acts 29 Church Finder</a></li>
+            <li><a href="https://tctnetwork.org/churches" target="_blank" rel="noopener noreferrer">TCT Church Directory</a></li>
+        </ul>
+    </details>
+
+
+    <details>
+        <summary>Links to Other Great Summaries of the Good News</summary>
+
+        <p>
+            The links below are excellent summaries of the Good News,
+            created by Matthias Media.
+        </p>
+
+        <ul>
+            <li>
+                <a href="https://www.twowaystolive.com/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Two Ways To Live (English)
+                </a>
+            </li>
+
+            <li>
+                <a href="https://twowaystolive.com/zh/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Two Ways To Live (Chinese)
+                </a>
+            </li>
+        </ul>
+
+        <p>
+            If you prefer a video format, check out this great video which a good friend of mine created to summarize the gospel.
+        </p>
+        
+        <ul>
+            <li>
+                <a href="https://youtu.be/zRXxSfc3neM?si=7WoYyjuROT8WhwzD"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    What is the Gospel? (Video Presentation)
+                </a>
+            </li>
+        </ul>
+
+    </details>
+
+
+
+    <details open>
+        <summary>Questions?</summary>
+
+        <p>
+            I'd be glad to hear from you.
+        </p>
+
+        <a class="cta"
+           href="https://docs.google.com/forms/d/e/1FAIpQLSeZyMCVmjn0XFvFdY2HTlk9HAnBR5SGKKQJg3PnJdEZ4ev_2w/viewform?usp=header"
+           target="_blank"
+           rel="noopener noreferrer">
+            Contact Me
+        </a>
+    </details>
+
+</div>
+
 </body>
 </html>
+```
