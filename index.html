@@ -142,10 +142,23 @@
                 font-size: 2rem;
             }
         }
-    </style>
+    
+html{scroll-behavior:smooth}.topbar{position:fixed;top:0;left:0;right:0;height:60px;background:#fff;border-bottom:1px solid #e5e5e7;display:flex;justify-content:space-between;align-items:center;padding:0 20px;z-index:1000}
+.drawer{position:fixed;top:0;right:-260px;width:250px;height:100%;background:#fff;transition:.3s;padding:80px 20px;z-index:1001;box-shadow:-2px 0 10px rgba(0,0,0,.1)}
+.drawer.open{right:0}.drawer a{display:block;padding:10px 0}.container{margin-top:70px}#menuBtn{font-size:28px;border:none;background:none;cursor:pointer}#overlay{display:none;position:fixed;inset:0}</style>
 </head>
 
-<body>
+<body id="top">
+<header class="topbar"><div>Good News</div><button id="menuBtn">☰</button></header><nav id="drawer" class="drawer">
+    <a href="#top">Home</a>
+    <a href="#video">Gospel Video</a>
+    <a href="#written">Written Gospel</a>
+    <a href="#bible">Bible</a>
+    <a href="#church">Church</a>
+    <a href="#summaries">Other Summaries</a>
+    <a href="#podcasts">Good Listens</a>
+    <a href="#questions">Questions</a>
+</nav><div id="overlay"></div>
 
 <div class="container">
 
@@ -163,7 +176,7 @@
     </p>
 
 
-<details open>
+<details id="video" open>
         <summary>The Good News (Video Summary)</summary>
 
         <p>
@@ -183,7 +196,7 @@
 
     </details>
 
-    <details>
+    <details id="written">
         <summary>The Good News (Written with Bible Passages)</summary>
 
         <blockquote>
@@ -301,7 +314,7 @@
 
     </details>
 
-    <details>
+    <details id="bible">
         <summary>Resources for Getting in to God's Word</summary>
 
         <p>
@@ -315,7 +328,7 @@
         </ul>
     </details>
 
-    <details>
+    <details id="church">
         <summary>Resources for Finding a Local Church</summary>
 
         <p>
@@ -364,7 +377,7 @@
     </details>
 
 
-    <details>
+    <details id="summaries">
         <summary>Links to Other Great Summaries of the Good News</summary>
 
         <p>
@@ -407,7 +420,7 @@
     </details>
 
 
-    <details>
+    <details id="podcasts">
         <summary>Good Listening (Podcasts / Talks / Sermons / Etc.)</summary>
 
         <p>
@@ -464,6 +477,12 @@
 
 </div>
 
-</body>
+
+<script>
+const b=document.getElementById('menuBtn'),d=document.getElementById('drawer'),o=document.getElementById('overlay');
+b.onclick=()=>{d.classList.toggle('open');o.style.display=d.classList.contains('open')?'block':'none';}
+o.onclick=()=>{d.classList.remove('open');o.style.display='none';}
+document.querySelectorAll('.drawer a').forEach(a=>a.onclick=e=>{d.classList.remove('open');o.style.display='none';let id=a.getAttribute('href').slice(1);let el=document.getElementById(id);if(el&&el.tagName==='DETAILS')el.open=true;});
+</script></body>
 </html>
 ```
