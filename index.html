@@ -143,9 +143,26 @@
             }
         }
     
-html{scroll-behavior:smooth}.topbar{position:fixed;top:0;left:0;right:0;height:60px;background:#fff;border-bottom:1px solid #e5e5e7;display:flex;justify-content:space-between;align-items:center;padding:0 20px;z-index:1000}
-.drawer{position:fixed;top:0;right:-260px;width:250px;height:100%;background:#fff;transition:.3s;padding:80px 20px;z-index:1001;box-shadow:-2px 0 10px rgba(0,0,0,.1)}
-.drawer.open{right:0}.drawer a{display:block;padding:10px 0}.container{margin-top:70px}#menuBtn{font-size:28px;border:none;background:none;cursor:pointer}#overlay{display:none;position:fixed;inset:0}</style>
+        html{scroll-behavior:smooth}
+        details {    scroll-margin-top: 90px;}
+        .topbar{position:fixed;top:0;left:0;right:0;height:60px;background:#fff;border-bottom:1px solid #e5e5e7;display:flex;justify-content:space-between;align-items:center;padding:0 20px;z-index:1000}
+        .drawer{position:fixed;top:0;right:-260px;width:250px;height:100%;background:#fff;transition:.3s;padding:80px 20px;z-index:1001;box-shadow:-2px 0 10px rgba(0,0,0,.1)}
+        .drawer.open{right:0}.drawer a{display:block;padding:10px 0}.container{margin-top:70px}#menuBtn{font-size:28px;border:none;background:none;cursor:pointer}#overlay{display:none;position:fixed;inset:0}
+
+        .highlight {
+            animation: highlightSection 2.8s ease;
+        }
+
+        @keyframes highlightSection {
+            0% {
+                background: rgba(0,113,227,.16);
+            }
+            100% {
+                background: transparent;
+            }
+        }
+
+</style>
 </head>
 
 <body id="top">
@@ -460,7 +477,7 @@ html{scroll-behavior:smooth}.topbar{position:fixed;top:0;left:0;right:0;height:6
 
 
 
-    <details open>
+    <details id="questions" open>
         <summary>Questions?</summary>
 
         <p>
@@ -479,10 +496,65 @@ html{scroll-behavior:smooth}.topbar{position:fixed;top:0;left:0;right:0;height:6
 
 
 <script>
-const b=document.getElementById('menuBtn'),d=document.getElementById('drawer'),o=document.getElementById('overlay');
-b.onclick=()=>{d.classList.toggle('open');o.style.display=d.classList.contains('open')?'block':'none';}
-o.onclick=()=>{d.classList.remove('open');o.style.display='none';}
-document.querySelectorAll('.drawer a').forEach(a=>a.onclick=e=>{d.classList.remove('open');o.style.display='none';let id=a.getAttribute('href').slice(1);let el=document.getElementById(id);if(el&&el.tagName==='DETAILS')el.open=true;});
-</script></body>
+const b = document.getElementById('menuBtn');
+const d = document.getElementById('drawer');
+const o = document.getElementById('overlay');
+
+b.onclick = () => {
+    d.classList.toggle('open');
+    o.style.display = d.classList.contains('open') ? 'block' : 'none';
+};
+
+o.onclick = () => {
+    d.classList.remove('open');
+    o.style.display = 'none';
+};
+
+document.querySelectorAll('.drawer a').forEach(a => {
+
+    a.onclick = () => {
+
+        // Close menu
+        d.classList.remove('open');
+        o.style.display = 'none';
+
+        let id = a.getAttribute('href').slice(1);
+        let el = document.getElementById(id);
+
+        // If this menu item points to a <details> section...
+        if (el && el.tagName === 'DETAILS') {
+
+            // Close every section except video
+            document.querySelectorAll('details').forEach(section => {
+                if (section.id !== 'video' && section.id !== 'questions') {
+                    section.open = false;
+                }
+            });
+
+            // Open the selected one
+            el.open = true;
+
+            // Highlight it briefly
+            el.classList.add('highlight');
+
+            setTimeout(() => {
+                el.classList.remove('highlight');
+            }, 2800);
+        }
+
+    };
+
+});
+
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+});
+
+</script>
+</body>
 </html>
 ```
